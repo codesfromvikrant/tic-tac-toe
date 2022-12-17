@@ -1,5 +1,10 @@
 const checkBox = document.querySelectorAll('.check-box');
-const result = document.getElementById('result');
+const id = (id) => document.getElementById(id);
+const result = id('result');
+const gameOver = id('gameover');
+const container = id('container');
+const newGame = id('newgame');
+
 checkBox.forEach((el, i) => {
   if (i % 2 === 0) {
     el.style.backgroundColor = "#cbd5e1";
@@ -33,6 +38,10 @@ document.getElementById('container').addEventListener('click', function (e) {
   state = !state;
 });
 
+newGame.addEventListener('click', function () {
+  location.reload();
+})
+
 function winner() {
 
   let win = true;
@@ -40,10 +49,15 @@ function winner() {
   function checkWin(check) {
     if (check) {
       if (targetEl.innerHTML == "X") {
-        result.textContent = "Player 1 is the Winner :)"
+        result.textContent = "Player 1 is the Winner 😎🏆"
       } else {
-        result.textContent = "Player 2 is the Winner :)"
+        result.textContent = "Player 2 is the Winner 😎🏆"
       }
+      gameOver.style.display = "block";
+      checkBox.forEach((el) => {
+        el.style.filter = "blur(8px)";
+      })
+
     } else {
       win = true;
     }

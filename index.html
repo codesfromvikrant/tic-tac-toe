@@ -14,7 +14,7 @@
   <h3 class="heading">Tic Tac Toe</h3>
   <h4>Player 1: X</h4>
   <h4>Player 2: O</h4>
-  <p class="result" id="result"></p>
+
   <div class="container" id="container">
     <button data-rows="0" data-columns="0" class="check-box"></button>
     <button data-rows="0" data-columns="1" class="check-box"></button>
@@ -25,8 +25,11 @@
     <button data-rows="2" data-columns="0" class="check-box"></button>
     <button data-rows="2" data-columns="1" class="check-box"></button>
     <button data-rows="2" data-columns="2" class="check-box"></button>
+    <div class="gameover" id="gameover"></div>
+    <p class="result" id="result"></p>
   </div>
 
+  <button class="newgame" id="newgame">New Game!</button>
   <script src="script.js"></script>
 </body>
 

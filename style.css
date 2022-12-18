@@ -9,15 +9,10 @@
 html {
   font-size: 62.5%;
   font-family: "Source Sans Pro", sans-serif;
-
-
 }
 
 body {
-  background-image: linear-gradient(45deg, #7dd3fc, #e0f2fe);
-  background-size: cover;
-
-
+  background: linear-gradient(45deg, #7dd3fc, #e0f2fe);
 }
 
 .heading {
@@ -61,7 +56,7 @@ h4 {
 }
 
 .newgame {
-  margin: 2rem auto;
+  margin: 2rem auto 7rem auto;
   display: flex;
   justify-content: center;
   background-color: #f1f5f9;

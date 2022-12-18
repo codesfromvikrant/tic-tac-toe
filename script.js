@@ -1,3 +1,5 @@
+///////////////////////////////
+// selecting id and classes from html file
 const checkBox = document.querySelectorAll('.check-box');
 const id = (id) => document.getElementById(id);
 const result = id('result');
@@ -5,43 +7,53 @@ const gameOver = id('gameover');
 const container = id('container');
 const newGame = id('newgame');
 
+/////////////////////////////
+// For giving chess like pattern
 checkBox.forEach((el, i) => {
   if (i % 2 === 0) {
     el.style.backgroundColor = "#cbd5e1";
   }
 })
 
+//////////////////////////////
+// Declaring variables 
 let state = true;
 let arr = [
   [1, 2, 3],
   [4, 5, 6],
   [7, 8, 9]
 ]
-
 let row;
 let col;
 let targetEl;
-document.getElementById('container').addEventListener('click', function (e) {
+
+//////////////////////////////
+// adding event listener on container box
+container.addEventListener('click', function (e) {
   targetEl = e.target;
   row = targetEl.dataset.rows;
   col = targetEl.dataset.columns;
 
   if (state) {
     targetEl.innerHTML = "X";
-    arr[row][col] = "X"
+    arr[row][col] = "X";
   } else {
-    targetEl.innerHTML = "O"
-    arr[row][col] = "O"
+    targetEl.innerHTML = "O";
+    arr[row][col] = "O";
   }
 
-  winner();
   state = !state;
+  winner();
 });
 
+///////////////////////////////
+// Onclicking new game button
 newGame.addEventListener('click', function () {
   location.reload();
 })
 
+///////////////////////////////
+// Function for finding the winner of the game
 function winner() {
 
   let win = true;
